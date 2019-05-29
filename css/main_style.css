@@ -48,9 +48,9 @@
 .desc{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 100;
-    font-size: 18px;
+    font-size: 13px;
     color: white;
-    margin: 0;
+    margin: 0 0 0 -15px;
 }
 .address-cont{
     display: flex;
@@ -71,10 +71,10 @@
 
 .graph-cont{
     grid-area: graph;
-    background-color: cadetblue;
+    position: relative;
 }
 .days-cont{
     grid-area: days;
-    background-color: tomato;
+    background-color: rgb(241, 228, 111);
 
 }
