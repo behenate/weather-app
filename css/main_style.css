@@ -1,9 +1,14 @@
+:root{
+    --nice-yellow: rgb(241, 228, 111);
+}
 .weather-cont{
     display: grid;
     position: relative;
     background-color: rgb(37, 37, 37);
-    width: 800px;
-    height: 450px;
+
+    width: 80vw;
+    max-width: 80vh;
+    height: 53vh;
     left: 50%;
     top:50%;
     padding: 20px;
@@ -75,16 +80,25 @@
 }
 .days-cont{
     display: flex;
+    border: 1px solid var(--nice-yellow);
+    border-width: 1px 0px 1px 0px;
     grid-area: days;
     justify-content: space-around;
     margin: 0px 20px 0px 20px;
+
 }
+
 .day{
+
     grid-template-rows: 30% 40% 30%;
     display: grid;
     justify-items: center;
     justify-content: center;
     width: 20%;
+    transition: .1s;
+}
+.day:hover{
+    background-color: rgba(241, 228, 111, 0.26);
 }
 .day > div{
     width: 100%;
