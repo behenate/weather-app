@@ -45,13 +45,12 @@ var chart = new Chart(ctx, {
                 ticks:{
                     display:true,
                     fontColor:'rgba(255, 255, 255, 0.2)',
-                }
-                  
+                }     
             }],
             
         },
         plugins: {
-            // Change options for ALL labels of THIS CHART
+            // Labels above graph points plugin
             datalabels: {
                 color: 'rgba(255,255,255,0.6)',
                 anchor: 'start',
