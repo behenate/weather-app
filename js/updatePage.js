@@ -30,9 +30,13 @@ geolocate().then(function(data){
 
     // UPDATE CURRENT DAY CSS
     let icon = document.querySelector('.main-icon');
-    icon.src = iconByName[data.days[0][0].conditions]; 
     let mainTemp = document.querySelector('.temp');
-    mainTemp.innerHTML = Math.floor(data.days[0][0].temperature) + "&#176C";
     let desc = document.querySelector('.desc');
-    desc.innerHTML = data.days[0][0].description;
+    let city =document.querySelector('.city');
+    let country = document.querySelector('.country');
+    icon.src = iconByName[data.days[0][0].conditions]; 
+    mainTemp.innerHTML = Math.floor(data.days[0][0].temperature) + "&#176C";
+    desc.innerHTML = data.days[0][0].description
+    city.innerHTML = data.city;
+    country.innerHTML = data.country;
 });
