@@ -40,7 +40,7 @@ function geolocate(){
     var geopromise = new Promise(function(resolve, reject){
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition((position)=>{
-                var OPENWEATHERDATA = ` https://crossorigin.me/http://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=1b95c89c1b70755e6b0368450095f270`;
+                var OPENWEATHERDATA = ` https://crossorigin.me/https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=1b95c89c1b70755e6b0368450095f270`;
                 let JSONData = $.getJSON(OPENWEATHERDATA).done(function(data){
                     let weatherData = {
                         all: data,
