@@ -28,10 +28,12 @@
     grid-area: main-icon;
     display: flex;
     justify-content: center;
+    align-items: flex-end;
 }
 .main-icon{
-    max-width: 90%;
-    max-height: 90%;
+    position: relative;
+    max-width: 100%;
+    transform: translate(0%, -10px);
 }
 .temp-cont{
     display: flex;

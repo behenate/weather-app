@@ -11,7 +11,7 @@
 <body>
     <div class="weather-cont">
         <div class="main-icon-cont">
-            <img class="main-icon" src="img/icons/Cloudy.png" >
+            <div><img class="main-icon" src="img/icons/Cloudy.png" ></div>
         </div>
         <div class="temp-cont">
             <p class="temp">27&#176C</p>
@@ -27,27 +27,27 @@
             <canvas class="graph" id="temp-graph"></canvas>
         </div>
         <div class="days-cont">
-            <div class="day day1">
+            <div class="day day0">
                 <p>Dziś:</p>
                 <div><img src="img/icons/Fog.png"></div>
                 <p>5&#176C 27&#176C</p>
             </div>
-            <div class="day day2">
+            <div class="day day1">
                 <p>Jutro:</p>
                 <div><img src="img/icons/HeavyRain.png"></div>
                 <p>5&#176C 27&#176C</p>
             </div>
-            <div class="day day3">
+            <div class="day day2">
                 <p>30.05:</p>
                 <div><img src="img/icons/HeavySnow.png"></div>
                 <p>5&#176C 27&#176C</p>
             </div>
-            <div class="day day4">
+            <div class="day day3">
                 <p>31.05</p>
                 <div><img src="img/icons/PartlyCloudyDay.png"></div>
                 <p>5&#176C 27&#176C</p>
             </div>
-            <div class="day day5">
+            <div class="day day4">
                 <p>01.06</p>
                 <div><img src="img/icons/Sunny.png"></div>
                 <p>5&#176C 27&#176C</p>
@@ -55,9 +55,11 @@
         </div>
     </div>
     <!-- Chart.js for the graph // Chart.js dla grafu -->
+    <script src="js/helper.js"></script>
     <script src="js/chart.min.js"></script>
     <script src="js/chartjs-plugin-datalabels.min.js"></script>
     <script src="js/geolocate.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/chartFunctions.js"></script>
+    <script src="js/updatePage.js"></script>
 </body>
 </html>
