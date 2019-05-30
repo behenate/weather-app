@@ -1,6 +1,9 @@
 :root{
     --nice-yellow: rgb(241, 228, 111);
 }
+*{
+    box-sizing: border-box;
+}
 .weather-cont{
     display: grid;
     position: relative;
@@ -15,8 +18,8 @@
     transform: translate(-50%, 50%);
     grid-template-rows: calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8);
     grid-template-columns: calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8);
-    grid-template-areas: "main-icon main-icon temp temp . . address address"
-                         "main-icon main-icon temp temp desc desc address address"   
+    grid-template-areas: "inf inf inf inf inf . address address"
+                         "inf inf inf inf inf . address address"   
                          "graph graph graph graph graph graph graph graph"
                          "graph graph graph graph graph graph graph graph"
                          "graph graph graph graph graph graph graph graph"
@@ -24,8 +27,11 @@
                          "days days days days days days days days"
                          "days days days days days days days days"
 }
+.info-cont{
+    display: flex;
+    grid-area: inf;
+}
 .main-icon-cont{
-    grid-area: main-icon;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -33,12 +39,13 @@
 .main-icon{
     position: relative;
     max-width: 100%;
-    transform: translate(0%, -10px);
+    transform: translate(0%, -12px);
+    min-width: 100px;
+    margin-right: 20px;
 }
 .temp-cont{
     display: flex;
     align-items: flex-end;
-    grid-area: temp;
 }
 .temp{
     font-family: Arial, Helvetica, sans-serif;
@@ -49,15 +56,14 @@
 }
 .desc-cont{
     display: flex;
-    grid-area: desc;
-    align-items: center;
+    align-items: flex-end;
 }
 .desc{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 100;
     font-size: 13px;
     color: white;
-    margin: 0 0 0 -15px;
+    white-space: nowrap;
 }
 .address-cont{
     display: flex;
