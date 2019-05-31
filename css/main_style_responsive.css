@@ -52,3 +52,20 @@
         max-height: 30%
     }
 }
+
+@media only screen and (max-height: 440px) {
+    .weather-cont{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        width: 100vw ;
+        max-width: 200vh;
+        height: 100vh;
+        min-height: 0;
+        grid-template-rows: calc(100%/8) calc(100%/8) calc(100%/8) calc(100%/8) auto calc(100%/12) calc(100%/8) calc(100%/16);
+    }
+    .day>div>img{
+        width: 20px;
+    }
+}
