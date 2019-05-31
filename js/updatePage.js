@@ -59,6 +59,16 @@ function setDay(data, day){
     desc.innerHTML = data.days[day][dataPoint].description;
     city.innerHTML = data.city;
     country.innerHTML = data.country;
+
+    let detConditionsImgs = Array.from(document.querySelectorAll('.det-condition>img'));
+    let dayConditions = [];
+    data.days[day].map(e => dayConditions.push(e.conditions));
+    detConditionsImgs.map((img,i)=>{
+        img.src = iconByName[data.days[day][i].conditions]; 
+        if(data.days[day][i].conditions == 'Clouds'){
+            img.src = cloudsByDesc[data.days[day][i].description];
+        }
+    });
 }
 function updateDayPickers(data){
     let dayPickersImgs = Array.from(document.querySelectorAll('.day'));
