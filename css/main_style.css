@@ -105,8 +105,11 @@
     width: 20%;
     transition: .1s;
 }
-.day:hover{
+.day:nth-child(1){
     background-color: rgba(241, 228, 111, 0.26);
+}
+.day:hover{
+    background-color: rgba(241, 228, 111, 0.26) !important;
 }
 .day > div{
     width: 100%;

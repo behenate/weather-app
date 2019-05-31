@@ -25,19 +25,23 @@ let cloudsByDesc={
 }
 geolocate().then(function(data){
     setDay(data, 0);
+    let dayPickersImgs = Array.from(document.querySelectorAll('.day'));
+
+    dayPickersImgs.map((elem, i) => elem.addEventListener("click", (e)=>{
+        dayPickersImgs.map(e => e.style.backgroundColor = "rgba(0,0,0,0");
+        elem.style.backgroundColor = "rgba(241, 228, 111, 0.26)";
+        setDay(data,i);
+    }));
     updateDayPickers(data);
 });
 
 function setDay(data, day){
     // UPDATE THE CHART
-    let mainChart = createChart();
-    console.log(data);
-    console.log(mainChart);
     let temperatures = [];
     data.days[day].map(e => temperatures.push(Math.floor(e.temperature)));
     let hours = [];
     data.days[day].map(e => hours.push(String(e.hour) + ":00"));
-    updateChart(mainChart, temperatures, hours);
+    updateChart(undefined, temperatures, hours);
 
     // UPDATE CURRENT DAY CSS
     let icon = document.querySelector('.main-icon');
@@ -45,7 +49,6 @@ function setDay(data, day){
     let desc = document.querySelector('.desc');
     let city =document.querySelector('.city');
     let country = document.querySelector('.country');
-    
     let dataPoint = Boolean(day) * 5;
     
     icon.src = iconByName[data.days[day][dataPoint].conditions]; 

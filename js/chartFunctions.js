@@ -1,7 +1,6 @@
-
-function createChart(){
-    var ctx = document.getElementById('temp-graph').getContext('2d');
-    var chart = new Chart(ctx, {
+var mainChart;
+var ctx = document.getElementById('temp-graph').getContext('2d');    
+    var chart_Data = {
         // The type of chart we want to create
         type: 'line',
 
@@ -65,13 +64,15 @@ function createChart(){
                 }
             },
         }
-    });
-    return chart;
-}
+    }
+
 
 function updateChart(chart, temperature, hours){
-    chart.config.data.datasets[0].data = temperature;
-    chart.data.labels = hours;
-    chart.update();
+    if(mainChart != undefined)
+        mainChart.destroy();
+    mainChart = new Chart(ctx, chart_Data);
+    mainChart.config.data.datasets[0].data = temperature;
+    mainChart.data.labels = hours;
+    mainChart.update();
 }
 
