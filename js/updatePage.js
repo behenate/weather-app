@@ -1,10 +1,10 @@
 let iconByName={
-    Clear: 'img/icons/Clear.png',
-    Clouds:'img/icons/Clouds.png',
-    Snow: 'img/icons/Snow.png',
-    Rain: 'img/icons/Rain.png',
-    Drizzle: 'img/icons/Drizzle.png',
-    Thunderstorm: 'img/icons/Thunderstorm.png',
+    Clear: 'img/icons/Material/Clear.png',
+    Clouds:'img/icons/Material/Clouds.png',
+    Snow: 'img/icons/Material/Snow.png',
+    Rain: 'img/icons/Material/Rain.png',
+    Drizzle: 'img/icons/Material/Drizzle.png',
+    Thunderstorm: 'img/icons/Material/Thunderstorm.png',
     Mist: 'img/icons/Fog.png',
     Smoke: 'img/icons/Fog.png',
     Haze: 'img/icons/Fog.png',
@@ -16,6 +16,12 @@ let iconByName={
     Squall: 'img/icons/Fog.png',
     Tornado: 'img/icons/Fog.png',
 
+}
+let cloudsByDesc={
+    'few clouds': 'img/icons/Material/few clouds.png',
+    'scattered clouds': 'img/icons/Material/scattered clouds.png',
+    'broken clouds': 'img/icons/Material/broken clouds.png',
+    'overcast clouds':'img/icons/Material/Clouds.png'
 }
 geolocate().then(function(data){
     setDay(data, 0);
@@ -41,7 +47,11 @@ function setDay(data, day){
     let country = document.querySelector('.country');
     
     let dataPoint = Boolean(day) * 5;
+    
     icon.src = iconByName[data.days[day][dataPoint].conditions]; 
+    if(data.days[day][dataPoint].conditions == 'Clouds'){
+        icon.src = cloudsByDesc[data.days[day][dataPoint].description];
+    }
     mainTemp.innerHTML = Math.floor(data.days[day][dataPoint].temperature) + "&#176C";
     desc.innerHTML = data.days[day][dataPoint].description;
     city.innerHTML = data.city;
@@ -55,8 +65,13 @@ function updateDayPickers(data){
         let dateElem = day.childNodes[1];
         let tempElem = day.childNodes[5];
         let dataPoint = Boolean(i) * 5;
-        console.log(data);
         let icon = iconByName[data.days[i][dataPoint].conditions];
+        //PICK ICON FOR CLOUDY WEATHER
+        console.log(data);
+        if(data.days[i][dataPoint].conditions == 'Clouds'){
+            icon = cloudsByDesc[data.days[i][dataPoint].description];
+        }
+        
         let temps = [];
         data.days[i].map(e => temps.push(Math.floor(e.temperature)));
         let maxTemp = i == 0 ? temps[0] : Math.max(...temps);
