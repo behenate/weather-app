@@ -7,6 +7,18 @@
 body{
     background-color: rgb(37, 37, 37);
 }
+img{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+p{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;  
+}
 .weather-cont{
     display: grid;
     position: relative;
