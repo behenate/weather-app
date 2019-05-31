@@ -67,7 +67,7 @@
         grid-template-rows: calc(100%/9) calc(100%/9) calc(100%/9) calc(100%/9) auto calc(100%/12) calc(100%/9) calc(100%/16);
     }
     .day>div>img{
-        width: 20px;
+        height: 80%;
     }
     .det-condinitons-cont{
         position: relative;
