@@ -62,9 +62,8 @@
         width: 100vw ;
         max-width: 200vh;
         height: 90vh;
-        
         min-height: 0;
-        grid-template-rows: calc(100%/9) calc(100%/9) calc(100%/9) calc(100%/9) auto calc(100%/12) calc(100%/8) calc(100%/16);
+        grid-template-rows: calc(100%/9) calc(100%/9) calc(100%/9) calc(100%/9) auto calc(100%/12) calc(100%/9) calc(100%/16);
     }
     .day>div>img{
         width: 20px;
@@ -72,5 +71,11 @@
     .det-condinitons-cont{
         position: relative;
         top: -5px;
+    }
+    .main-icon{
+        height: 50px;
+    }
+    .temp{
+        font-size: 50px;
     }
 }

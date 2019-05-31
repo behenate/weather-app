@@ -75,4 +75,10 @@ function updateChart(chart, temperature, hours){
     mainChart.data.labels = hours;
     mainChart.update();
 }
+//Refresh the chart on resize so when changin
+function onScreenResize(){
+    mainChart.destroy();
+    mainChart = new Chart(ctx, chart_Data);
+    mainChart.update();
 
+}
