@@ -9,7 +9,7 @@ function calcDayWeather(daynum, weatherData){
         if(elemDate == date)
             forecast.push(elem);
         //Add the first entry of the next day for continuity day 0 is incomplete
-        if( i == 8 * daynum + 1){
+        if(daynum != 0 && i == 8 * daynum +2){
             forecast.push(elem);
         }
     }
@@ -22,10 +22,13 @@ function calcDayWeather(daynum, weatherData){
     let toReturn = [];
     for(let i=0; i<9; i++){
         let data = totalForecast[i];
+        let day = addZeros(new Date(data.dt*1000).getDate());
+        let month = addZeros(new Date(data.dt*1000).getMonth() + 1);
         if (data == undefined)
             break;
         toReturn.push({
             //Api has some weird time formatting, subtract 2 to get the same hour as in the forecast
+            date: `${day}.${month}`,
             hour: new Date(data.dt*1000).getHours() - 2,
             temperature: data.main.temp - 273.15,
             conditions: data.weather[0].main,
