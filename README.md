@@ -1,4 +1,4 @@
-# wojciechweather.github.io
+# Wojciechweather
 
 ### Description
 
