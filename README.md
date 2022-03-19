@@ -2,7 +2,7 @@
 
 ### Description
 
-This repository contains a simple weather website which was created in `HTML/CSS/JS` using `Openweather API` and 'chart.js`
+This repository contains a simple weather website which was created in `HTML/CSS/JS` using `Openweather API` and `Chart.js`
 
 ### Try it yourself! 
 
