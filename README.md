@@ -6,7 +6,7 @@ This repository contains a simple weather website which was created in `HTML/CSS
 
 ### Try it yourself! 
 
-**You can try it at:** https://behenate.github.io/wojciechweather/ 
+**You can try it at:** https://behenate.github.io/weather-app/ 
 
 *remember allow location, otherwise the app can't locate you*
 
